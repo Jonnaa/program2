@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<project name="WebServer" default="run">
+
+    <target name="compile">
+        <mkdir dir="."/>
+        <javac srcdir="." destdir="."/>
+    </target>
+    
+    <target name="run" depends="compile">
+        <echo> Awaiting server request... </echo>
+        <java classname="WebServer">
+            <classpath>
+                <pathelement location="."/>
+            </classpath>
+        </java>
+    </target>
+</project>
